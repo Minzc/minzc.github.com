@@ -209,6 +209,110 @@
             
               
                 
+                <a class="post-title-link" href="/2016/01/26/Efficiently-Mining-Long-Patterns-from-Databases/" itemprop="url">
+                  Efficiently Mining Long Patterns from Databases
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-26T15:27:17-08:00" content="2016-01-26">
+              2016-01-26
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/26/Efficiently-Mining-Long-Patterns-from-Databases/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/26/Efficiently-Mining-Long-Patterns-from-Databases/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <!-- HTML -->
+<blockquote class="blockquote-center"><br>Efficiently Mining Long Patterns from Databases<br>Roberto J. Bayardo Jr.<br></blockquote>
+
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>The author presents an algorithm that is used to mining maximal patterns. Tha algorithm adopts look-a-head technique to avoid generating too many mid size patterns. Another contribution of the paper is that they describe a general technique that can be used to obtain a lower-bound on the support of an itemset by exploiting the support information of provided by its subset. </p>
+<h1 id="Search_space_pruning"><a href="#Search_space_pruning" class="headerlink" title="Search space pruning"></a>Search space pruning</h1><h2 id="Look_a_head"><a href="#Look_a_head" class="headerlink" title="Look a head"></a>Look a head</h2><p>The author represents every node in the enumeration tree by two itemsets, $h(g)$ and $t(g)$. $h(g)$ is the itemset enumerated by the node. The second itemset $t(g)$ is an <strong>ordered</strong> set and contains all items not in $h(g)$ but could be pontentially appear in any sub-node. </p>
+<p>If $h(g) \cup t(g)$ is frequent, then all subsets of $h(g) \cup t(g)$ are frequent but they can not be maximal patterns. Therefore, we cab halt the the sub-node expansion. </p>
+<h2 id="Prune_Infrequent_Items"><a href="#Prune_Infrequent_Items" class="headerlink" title="Prune Infrequent Items"></a>Prune Infrequent Items</h2><p>If $h(g) \cup {i}$, $i \in t(g)$ is infrequent, then any head of a sub-node containing $i$ will be infrequent. </p>
+<h1 id="Lower_Bound_Estimation"><a href="#Lower_Bound_Estimation" class="headerlink" title="Lower Bound Estimation"></a>Lower Bound Estimation</h1><p>Let $sup(I)$ be the set of transactions containing itemset $I$ and $drop(I, i)$ be the set of transactions dropped when we expand $I$ by $i$.</p>
+<p>$$drop(I, i) = sup(I) - sup(I \cup i)$$</p>
+<p>Therefore,</p>
+<p>$$sup(I \cup i) = sup(I)- drop(I, i)$$</p>
+<p>If we can get an upper bound of $drop(I, i)$, then we can achieve the lower bound of $sup(I \cup i)$.</p>
+<h2 id="Support_Lower-Bounding"><a href="#Support_Lower-Bounding" class="headerlink" title="Support Lower-Bounding"></a>Support Lower-Bounding</h2><p>$drop(I_{s}, i)$ is an upperbound of $drop(I, i)$ where $I_{s}$ is a proper subset of $I$.</p>
+<p><img src="/content/images/2016/support_drop.png" alt="support drop"></p>
+<p>We can calculate the lower bound of $I \cup T$ by applying the theorem. $T$ is an itemset disjoint from $I$ and $I_{s}$</p>
+<p>$$sup(I) - \sum_{i\in T} drop(I_{s}, i)$$</p>
+<p>Using the above theorem, we are able to calculate the upperbound of $h(g) \cup t(g)$</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/01/12/harmony/" itemprop="url">
                   Harmony
                 </a>
@@ -434,7 +538,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -448,7 +552,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>

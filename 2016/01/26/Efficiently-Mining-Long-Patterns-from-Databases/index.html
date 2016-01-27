@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="association rule,research," />
+  <meta name="keywords" content="pattern mining,research," />
 
 
 
@@ -52,21 +52,25 @@
 
 
 <meta name="description" content="&amp;lt;!-- HTML --&amp;gt;
- HARMONY: Efficiently Mining the Best Rules for Classification
-AbstractIn this work, the authors use an instance centric strategy to directly mine classification rules. They push the rul">
+Efficiently Mining Long Patterns from DatabasesRoberto J. Bayardo Jr.
+
+AbstractThe author presents an algorithm that is used to mining maximal patterns. Tha algorithm adopts look-a-head">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Harmony">
-<meta property="og:url" content="http://minzc.github.com/2016/01/12/harmony/index.html">
+<meta property="og:title" content="Efficiently Mining Long Patterns from Databases">
+<meta property="og:url" content="http://minzc.github.com/2016/01/26/Efficiently-Mining-Long-Patterns-from-Databases/index.html">
 <meta property="og:site_name" content="Minzc">
 <meta property="og:description" content="&amp;lt;!-- HTML --&amp;gt;
- HARMONY: Efficiently Mining the Best Rules for Classification
-AbstractIn this work, the authors use an instance centric strategy to directly mine classification rules. They push the rul">
-<meta property="og:updated_time" content="2016-01-12T23:10:07.000Z">
+Efficiently Mining Long Patterns from DatabasesRoberto J. Bayardo Jr.
+
+AbstractThe author presents an algorithm that is used to mining maximal patterns. Tha algorithm adopts look-a-head">
+<meta property="og:image" content="http://minzc.github.com/content/images/2016/support_drop.png">
+<meta property="og:updated_time" content="2016-01-27T01:14:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Harmony">
+<meta name="twitter:title" content="Efficiently Mining Long Patterns from Databases">
 <meta name="twitter:description" content="&amp;lt;!-- HTML --&amp;gt;
- HARMONY: Efficiently Mining the Best Rules for Classification
-AbstractIn this work, the authors use an instance centric strategy to directly mine classification rules. They push the rul">
+Efficiently Mining Long Patterns from DatabasesRoberto J. Bayardo Jr.
+
+AbstractThe author presents an algorithm that is used to mining maximal patterns. Tha algorithm adopts look-a-head">
 
 
 
@@ -78,7 +82,7 @@ AbstractIn this work, the authors use an instance centric strategy to directly m
   };
 </script>
 
-  <title> Harmony | Minzc </title>
+  <title> Efficiently Mining Long Patterns from Databases | Minzc </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -198,7 +202,7 @@ AbstractIn this work, the authors use an instance centric strategy to directly m
             
             
               
-                Harmony
+                Efficiently Mining Long Patterns from Databases
               
             
           </h1>
@@ -207,8 +211,8 @@ AbstractIn this work, the authors use an instance centric strategy to directly m
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-01-12T12:46:34-08:00" content="2016-01-12">
-              2016-01-12
+            <time itemprop="dateCreated" datetime="2016-01-26T15:27:17-08:00" content="2016-01-26">
+              2016-01-26
             </time>
           </span>
 
@@ -218,8 +222,8 @@ AbstractIn this work, the authors use an instance centric strategy to directly m
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/12/harmony/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/12/harmony/" itemprop="commentsCount"></span>
+                <a href="/2016/01/26/Efficiently-Mining-Long-Patterns-from-Databases/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/26/Efficiently-Mining-Long-Patterns-from-Databases/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -239,26 +243,22 @@ AbstractIn this work, the authors use an instance centric strategy to directly m
 
       
         <span itemprop="articleBody"><!-- HTML -->
-<p><blockquote class="blockquote-center"> HARMONY: Efficiently Mining the Best Rules for Classification</blockquote></p>
-<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>In this work, the authors use an instance centric strategy to directly mine classification rules. They push the rule pruning procedure in the rule generating step. Therefore, they do not need to do rule pruning after rule generation. </p>
-<h1 id="Rule_enumeration"><a href="#Rule_enumeration" class="headerlink" title="Rule enumeration"></a>Rule enumeration</h1><p>They adopt projected-based itemset enumeration framework and apply depth-first search strategy to enumerate classification rules. </p>
-<h2 id="Ordering_of_the_local_items"><a href="#Ordering_of_the_local_items" class="headerlink" title="Ordering of the local items"></a>Ordering of the local items</h2><p>To get the F-list, we need to define the local items ordering strategy. Instead of simply using the support-based order, they proposed three other methods. </p>
-<ol>
-<li>Entropy based</li>
-<li>Correlated correlation</li>
-<li>Maximum confidence </li>
-</ol>
-<h1 id="Search_space_pruning"><a href="#Search_space_pruning" class="headerlink" title="Search space pruning"></a>Search space pruning</h1><p>Their ideology that only generating one rule from one training instance shows many good properties. By tracking the highest confidence rule generated by one instance, they can do many effective pruning.</p>
-<ol>
-<li>Support equivalence item pruning</li>
-<li>Unpromising item elimination. We can remove $x_j$ if the following equation folds.</li>
-</ol>
-<p>$$ HCCR^{conf}_{t_{l}} \ge min\{1,\frac{sup_P^{c_{i}}{x_j}}{min_{sup}}\} $$</p>
-<ol>
-<li>Unpromising database pruning. </li>
-</ol>
-<h1 id="Rule_generation"><a href="#Rule_generation" class="headerlink" title="Rule generation"></a>Rule generation</h1><p>A rule is generated only when its confidence is larger than current maximum confidence. </p>
-<h1 id="New_instance_classification"><a href="#New_instance_classification" class="headerlink" title="New instance classification"></a>New instance classification</h1><p>The score for a certain group of rules is defined as the sum of the confidence of the covering rules w.r.t $t_{i}$. The model simply pick the class label with the highest score. </p>
+<blockquote class="blockquote-center"><br>Efficiently Mining Long Patterns from Databases<br>Roberto J. Bayardo Jr.<br></blockquote>
+
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>The author presents an algorithm that is used to mining maximal patterns. Tha algorithm adopts look-a-head technique to avoid generating too many mid size patterns. Another contribution of the paper is that they describe a general technique that can be used to obtain a lower-bound on the support of an itemset by exploiting the support information of provided by its subset. </p>
+<h1 id="Search_space_pruning"><a href="#Search_space_pruning" class="headerlink" title="Search space pruning"></a>Search space pruning</h1><h2 id="Look_a_head"><a href="#Look_a_head" class="headerlink" title="Look a head"></a>Look a head</h2><p>The author represents every node in the enumeration tree by two itemsets, $h(g)$ and $t(g)$. $h(g)$ is the itemset enumerated by the node. The second itemset $t(g)$ is an <strong>ordered</strong> set and contains all items not in $h(g)$ but could be pontentially appear in any sub-node. </p>
+<p>If $h(g) \cup t(g)$ is frequent, then all subsets of $h(g) \cup t(g)$ are frequent but they can not be maximal patterns. Therefore, we cab halt the the sub-node expansion. </p>
+<h2 id="Prune_Infrequent_Items"><a href="#Prune_Infrequent_Items" class="headerlink" title="Prune Infrequent Items"></a>Prune Infrequent Items</h2><p>If $h(g) \cup {i}$, $i \in t(g)$ is infrequent, then any head of a sub-node containing $i$ will be infrequent. </p>
+<h1 id="Lower_Bound_Estimation"><a href="#Lower_Bound_Estimation" class="headerlink" title="Lower Bound Estimation"></a>Lower Bound Estimation</h1><p>Let $sup(I)$ be the set of transactions containing itemset $I$ and $drop(I, i)$ be the set of transactions dropped when we expand $I$ by $i$.</p>
+<p>$$drop(I, i) = sup(I) - sup(I \cup i)$$</p>
+<p>Therefore,</p>
+<p>$$sup(I \cup i) = sup(I)- drop(I, i)$$</p>
+<p>If we can get an upper bound of $drop(I, i)$, then we can achieve the lower bound of $sup(I \cup i)$.</p>
+<h2 id="Support_Lower-Bounding"><a href="#Support_Lower-Bounding" class="headerlink" title="Support Lower-Bounding"></a>Support Lower-Bounding</h2><p>$drop(I_{s}, i)$ is an upperbound of $drop(I, i)$ where $I_{s}$ is a proper subset of $I$.</p>
+<p><img src="/content/images/2016/support_drop.png" alt="support drop"></p>
+<p>We can calculate the lower bound of $I \cup T$ by applying the theorem. $T$ is an itemset disjoint from $I$ and $I_{s}$</p>
+<p>$$sup(I) - \sum_{i\in T} drop(I_{s}, i)$$</p>
+<p>Using the above theorem, we are able to calculate the upperbound of $h(g) \cup t(g)$</p>
 </span>
       
     </div>
@@ -267,7 +267,7 @@ AbstractIn this work, the authors use an instance centric strategy to directly m
       
         <div class="post-tags">
           
-            <a href="/tags/association-rule/" rel="tag">#association rule</a>
+            <a href="/tags/pattern-mining/" rel="tag">#pattern mining</a>
           
             <a href="/tags/research/" rel="tag">#research</a>
           
@@ -278,17 +278,13 @@ AbstractIn this work, the authors use an instance centric strategy to directly m
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/10/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/01/12/harmony/" rel="next" title="Harmony">
+                <i class="fa fa-chevron-left"></i> Harmony
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/26/Efficiently-Mining-Long-Patterns-from-Databases/" rel="prev" title="Efficiently Mining Long Patterns from Databases">
-                Efficiently Mining Long Patterns from Databases <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -315,8 +311,8 @@ AbstractIn this work, the authors use an instance centric strategy to directly m
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/12/harmony/"
-           data-title="Harmony" data-url="http://minzc.github.com/2016/01/12/harmony/">
+      <div class="ds-thread" data-thread-key="2016/01/26/Efficiently-Mining-Long-Patterns-from-Databases/"
+           data-title="Efficiently Mining Long Patterns from Databases" data-url="http://minzc.github.com/2016/01/26/Efficiently-Mining-Long-Patterns-from-Databases/">
       </div>
     
   </div>
@@ -440,7 +436,7 @@ AbstractIn this work, the authors use an instance centric strategy to directly m
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Rule_enumeration"><span class="nav-number">2.</span> <span class="nav-text">Rule enumeration</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ordering_of_the_local_items"><span class="nav-number">2.1.</span> <span class="nav-text">Ordering of the local items</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Search_space_pruning"><span class="nav-number">3.</span> <span class="nav-text">Search space pruning</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Rule_generation"><span class="nav-number">4.</span> <span class="nav-text">Rule generation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#New_instance_classification"><span class="nav-number">5.</span> <span class="nav-text">New instance classification</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Search_space_pruning"><span class="nav-number">2.</span> <span class="nav-text">Search space pruning</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Look_a_head"><span class="nav-number">2.1.</span> <span class="nav-text">Look a head</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Prune_Infrequent_Items"><span class="nav-number">2.2.</span> <span class="nav-text">Prune Infrequent Items</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lower_Bound_Estimation"><span class="nav-number">3.</span> <span class="nav-text">Lower Bound Estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Support_Lower-Bounding"><span class="nav-number">3.1.</span> <span class="nav-text">Support Lower-Bounding</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
