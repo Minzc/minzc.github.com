@@ -64,7 +64,7 @@ Efficiently Mining Long Patterns from DatabasesRoberto J. Bayardo Jr.
 
 AbstractThe author presents an algorithm that is used to mining maximal patterns. Tha algorithm adopts look-a-head">
 <meta property="og:image" content="http://minzc.me/content/images/2016/support_drop.png">
-<meta property="og:updated_time" content="2016-01-27T01:14:41.000Z">
+<meta property="og:updated_time" content="2016-01-27T01:45:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Efficiently Mining Long Patterns from Databases">
 <meta name="twitter:description" content="&amp;lt;!-- HTML --&amp;gt;
@@ -246,6 +246,7 @@ AbstractThe author presents an algorithm that is used to mining maximal patterns
 <blockquote class="blockquote-center"><br>Efficiently Mining Long Patterns from Databases<br>Roberto J. Bayardo Jr.<br></blockquote>
 
 <h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>The author presents an algorithm that is used to mining maximal patterns. Tha algorithm adopts look-a-head technique to avoid generating too many mid size patterns. Another contribution of the paper is that they describe a general technique that can be used to obtain a lower-bound on the support of an itemset by exploiting the support information of provided by its subset. </p>
+<a id="more"></a>
 <h1 id="Search_space_pruning"><a href="#Search_space_pruning" class="headerlink" title="Search space pruning"></a>Search space pruning</h1><h2 id="Look_a_head"><a href="#Look_a_head" class="headerlink" title="Look a head"></a>Look a head</h2><p>The author represents every node in the enumeration tree by two itemsets, $h(g)$ and $t(g)$. $h(g)$ is the itemset enumerated by the node. The second itemset $t(g)$ is an <strong>ordered</strong> set and contains all items not in $h(g)$ but could be pontentially appear in any sub-node. </p>
 <p>If $h(g) \cup t(g)$ is frequent, then all subsets of $h(g) \cup t(g)$ are frequent but they can not be maximal patterns. Therefore, we cab halt the the sub-node expansion. </p>
 <h2 id="Prune_Infrequent_Items"><a href="#Prune_Infrequent_Items" class="headerlink" title="Prune Infrequent Items"></a>Prune Infrequent Items</h2><p>If $h(g) \cup {i}$, $i \in t(g)$ is infrequent, then any head of a sub-node containing $i$ will be infrequent. </p>
