@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="association rule,research," />
+  <meta name="keywords" content="pattern mining,research," />
 
 
 
@@ -52,21 +52,35 @@
 
 
 <meta name="description" content="&amp;lt;!-- HTML --&amp;gt;
- HARMONY: Efficiently Mining the Best Rules for Classification
-AbstractIn this work, the authors use an instance centric strategy to directly mine classification rules. They push the rul">
+Mining Long Sequential Patterns in a NoisySigmond 2002Jiong Yang, Jiawei Han, etc.
+
+Abstract
+Match Model
+Estimate match value on a sample using Chernoff bound
+Border collapsing to reduce">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Harmony">
-<meta property="og:url" content="http://minzc.me/2016/01/12/harmony/index.html">
+<meta property="og:title" content="Mining Long Sequential Patterns in a Noisy Environment">
+<meta property="og:url" content="http://minzc.me/2016/01/28/match/index.html">
 <meta property="og:site_name" content="Minzc">
 <meta property="og:description" content="&amp;lt;!-- HTML --&amp;gt;
- HARMONY: Efficiently Mining the Best Rules for Classification
-AbstractIn this work, the authors use an instance centric strategy to directly mine classification rules. They push the rul">
-<meta property="og:updated_time" content="2016-01-12T23:10:07.000Z">
+Mining Long Sequential Patterns in a NoisySigmond 2002Jiong Yang, Jiawei Han, etc.
+
+Abstract
+Match Model
+Estimate match value on a sample using Chernoff bound
+Border collapsing to reduce">
+<meta property="og:image" content="http://minzc.me/content/images/2016/201601282.png">
+<meta property="og:image" content="http://minzc.me/content/images/2016/201601281.png">
+<meta property="og:updated_time" content="2016-01-28T20:22:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Harmony">
+<meta name="twitter:title" content="Mining Long Sequential Patterns in a Noisy Environment">
 <meta name="twitter:description" content="&amp;lt;!-- HTML --&amp;gt;
- HARMONY: Efficiently Mining the Best Rules for Classification
-AbstractIn this work, the authors use an instance centric strategy to directly mine classification rules. They push the rul">
+Mining Long Sequential Patterns in a NoisySigmond 2002Jiong Yang, Jiawei Han, etc.
+
+Abstract
+Match Model
+Estimate match value on a sample using Chernoff bound
+Border collapsing to reduce">
 
 
 
@@ -78,7 +92,7 @@ AbstractIn this work, the authors use an instance centric strategy to directly m
   };
 </script>
 
-  <title> Harmony | Minzc </title>
+  <title> Mining Long Sequential Patterns in a Noisy Environment | Minzc </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -198,7 +212,7 @@ AbstractIn this work, the authors use an instance centric strategy to directly m
             
             
               
-                Harmony
+                Mining Long Sequential Patterns in a Noisy Environment
               
             
           </h1>
@@ -207,8 +221,8 @@ AbstractIn this work, the authors use an instance centric strategy to directly m
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-01-12T12:46:34-08:00" content="2016-01-12">
-              2016-01-12
+            <time itemprop="dateCreated" datetime="2016-01-28T09:45:27-08:00" content="2016-01-28">
+              2016-01-28
             </time>
           </span>
 
@@ -218,8 +232,8 @@ AbstractIn this work, the authors use an instance centric strategy to directly m
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/12/harmony/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/12/harmony/" itemprop="commentsCount"></span>
+                <a href="/2016/01/28/match/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/28/match/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -239,26 +253,25 @@ AbstractIn this work, the authors use an instance centric strategy to directly m
 
       
         <span itemprop="articleBody"><!-- HTML -->
-<p><blockquote class="blockquote-center"> HARMONY: Efficiently Mining the Best Rules for Classification</blockquote></p>
-<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>In this work, the authors use an instance centric strategy to directly mine classification rules. They push the rule pruning procedure in the rule generating step. Therefore, they do not need to do rule pruning after rule generation. </p>
-<h1 id="Rule_enumeration"><a href="#Rule_enumeration" class="headerlink" title="Rule enumeration"></a>Rule enumeration</h1><p>They adopt projected-based itemset enumeration framework and apply depth-first search strategy to enumerate classification rules. </p>
-<h2 id="Ordering_of_the_local_items"><a href="#Ordering_of_the_local_items" class="headerlink" title="Ordering of the local items"></a>Ordering of the local items</h2><p>To get the F-list, we need to define the local items ordering strategy. Instead of simply using the support-based order, they proposed three other methods. </p>
-<ol>
-<li>Entropy based</li>
-<li>Correlated correlation</li>
-<li>Maximum confidence </li>
-</ol>
-<h1 id="Search_space_pruning"><a href="#Search_space_pruning" class="headerlink" title="Search space pruning"></a>Search space pruning</h1><p>Their ideology that only generating one rule from one training instance shows many good properties. By tracking the highest confidence rule generated by one instance, they can do many effective pruning.</p>
-<ol>
-<li>Support equivalence item pruning</li>
-<li>Unpromising item elimination. We can remove $x_j$ if the following equation folds.</li>
-</ol>
-<p>$$ HCCR^{conf}_{t_{l}} \ge min\{1,\frac{sup_P^{c_{i}}{x_j}}{min_{sup}}\} $$</p>
-<ol>
-<li>Unpromising database pruning. </li>
-</ol>
-<h1 id="Rule_generation"><a href="#Rule_generation" class="headerlink" title="Rule generation"></a>Rule generation</h1><p>A rule is generated only when its confidence is larger than current maximum confidence. </p>
-<h1 id="New_instance_classification"><a href="#New_instance_classification" class="headerlink" title="New instance classification"></a>New instance classification</h1><p>The score for a certain group of rules is defined as the sum of the confidence of the covering rules w.r.t $t_{i}$. The model simply pick the class label with the highest score. </p>
+<blockquote class="blockquote-center"><br>Mining Long Sequential Patterns in a Noisy<br>Sigmond 2002<br>Jiong Yang, Jiawei Han, etc.<br></blockquote>
+
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><ul>
+<li>Match Model</li>
+<li>Estimate match value on a sample using Chernoff bound</li>
+<li>Border collapsing to reduce the number of database scaning<h1 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h1>Long patterns have many applications, especially in gene analysis. The common metric used to qualify a significant pattern is support. Due the presence of noise, a symbol may be mispresented as another one. As a result, a frequent may be concealed by noise. To tackle this problem, we need a more flexiable model. <h1 id="Match"><a href="#Match" class="headerlink" title="Match"></a>Match</h1><strong>Compatible Matrix</strong><br>Elements in the matrix shows the probability of the observe value being a real underlying substance.</li>
+</ul>
+<p>Given a pattern $P=d_{1}d_{2}…d_{n}$ and sequence $S=m_{1}m_{2}…m_{n}$. The match of $P$ in $S$ is denoted as<br>$$M(P,S)=\Pi P(d_{i}|m_{i})$$.</p>
+<p>If $S$ is longer than $P$, the match between $S$ and $P$ is defined as the maximal match of $P$ in every distinct subsequence with the lenght of $l_{p}$ of $S$.</p>
+<p>Given a pattern $P$ and sequqnce database $D$, the match of $P$ is $D$ is defined as<br>$$M(P,D)=\frac{\sum M(P,S)}{N}$$</p>
+<p><strong>The match has Apriori property</strong>. The match of $P$ in database is $\leq$ the match of ang subsequence of $P$ in the database</p>
+<h1 id="Sampling"><a href="#Sampling" class="headerlink" title="Sampling"></a>Sampling</h1><p>First, draw a sample from the database and use existing methods to mine the sample. Given the match of patterns in the sample data, we can use Chernoff bound to estimate the match of those patterns in the whole database.</p>
+<p>All patterns will be labeled as Frequent, Infrequent or Ambiguois. We only need to calcualte the actue match score of Ambiguois patterns. </p>
+<h1 id="Border_collapsing"><a href="#Border_collapsing" class="headerlink" title="Border collapsing"></a>Border collapsing</h1><p>Ambiguous patterns are embraced by infrequent patterns and frequent patterns. We want to collapse the two border and finally find the really frequent pattern border on the pattern lattice.</p>
+<p><img src="/content/images/2016/201601282.png" alt=""></p>
+<p>If memory can hold all of the patterns, only one database scan is fine. Sometimes, the number of ambiguiout patterns is very large. In this case, we select a set of ambiguious patterns, scan the database and collapse the border. </p>
+<p>Patterns with high collapsing power are selected first. We prefer patterns lying on the halfway of the lattice. If those patterns are frequent, then all of their subpatterns are frequent. While, if those patterns are infrequent, then all of their superpatterns are infrequent. </p>
+<p><img src="/content/images/2016/201601281.png" alt=""></p>
+<p>In each iteration, we first select pattern in the half way and then quarter way, etc. until the memory is filled up. A scan of the database is performed to compute the matches of those patterns. Finally, we use the result to collapse the border. If the memory can hold all patterns up to x layers, the size of the ambiguous patterns can be narrowed down the $1/x$ of the original one. As a result, if it takes $y$ scans before, now only $log_{x}{y}$ scans are required.</p>
 </span>
       
     </div>
@@ -267,7 +280,7 @@ AbstractIn this work, the authors use an instance centric strategy to directly m
       
         <div class="post-tags">
           
-            <a href="/tags/association-rule/" rel="tag">#association rule</a>
+            <a href="/tags/pattern-mining/" rel="tag">#pattern mining</a>
           
             <a href="/tags/research/" rel="tag">#research</a>
           
@@ -278,17 +291,13 @@ AbstractIn this work, the authors use an instance centric strategy to directly m
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/10/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/01/26/Efficiently-Mining-Long-Patterns-from-Databases/" rel="next" title="Efficiently Mining Long Patterns from Databases">
+                <i class="fa fa-chevron-left"></i> Efficiently Mining Long Patterns from Databases
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/26/Efficiently-Mining-Long-Patterns-from-Databases/" rel="prev" title="Efficiently Mining Long Patterns from Databases">
-                Efficiently Mining Long Patterns from Databases <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -315,8 +324,8 @@ AbstractIn this work, the authors use an instance centric strategy to directly m
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/12/harmony/"
-           data-title="Harmony" data-url="http://minzc.me/2016/01/12/harmony/">
+      <div class="ds-thread" data-thread-key="2016/01/28/match/"
+           data-title="Mining Long Sequential Patterns in a Noisy Environment" data-url="http://minzc.me/2016/01/28/match/">
       </div>
     
   </div>
@@ -440,7 +449,7 @@ AbstractIn this work, the authors use an instance centric strategy to directly m
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Rule_enumeration"><span class="nav-number">2.</span> <span class="nav-text">Rule enumeration</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ordering_of_the_local_items"><span class="nav-number">2.1.</span> <span class="nav-text">Ordering of the local items</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Search_space_pruning"><span class="nav-number">3.</span> <span class="nav-text">Search space pruning</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Rule_generation"><span class="nav-number">4.</span> <span class="nav-text">Rule generation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#New_instance_classification"><span class="nav-number">5.</span> <span class="nav-text">New instance classification</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Motivation"><span class="nav-number">2.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Match"><span class="nav-number">3.</span> <span class="nav-text">Match</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sampling"><span class="nav-number">4.</span> <span class="nav-text">Sampling</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Border_collapsing"><span class="nav-number">5.</span> <span class="nav-text">Border collapsing</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
